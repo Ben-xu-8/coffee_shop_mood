@@ -1,0 +1,20 @@
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+}
+
+.container {
+  .videoContainer {
+    .video {
+      height: 100vh;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

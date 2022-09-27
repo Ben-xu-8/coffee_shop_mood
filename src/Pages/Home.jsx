@@ -4,7 +4,7 @@ import VideoScreen from '../Components/VideoScreen';
 
 const Home = () => {
   return (
-    <div>
+    <div className='home'>
       <NavBar />
       <VideoScreen />
     </div>

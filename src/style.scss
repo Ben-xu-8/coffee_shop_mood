@@ -9,12 +9,43 @@
   background-color: grey;
 }
 
+.home {
+  background-color: black;
+}
+
+.navbar {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  align-items: center;
+  justify-content: space-around;
+  .wrapper {
+    .left {
+      .logo {
+        img {
+          height: 200px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
 .container {
+  background-color: black;
   .videoContainer {
     .video {
       height: 100vh;
       width: 100%;
       object-fit: cover;
+      z-index: -1;
+      opacity: 0.25;
     }
   }
+}
+
+.videoScreenCover {
+  color: white;
 }

@@ -1,42 +1,36 @@
 import React, { useEffect, useRef } from 'react';
 
-const VideoScreenCover = ({ state }) => {
+const VideoScreenCover = ({ click, handleReturn }) => {
   let navMenu = useRef(null);
 
-  const handleSubmit = () => {
-    navMenu.style.display = 'none';
+  const handleVideo = () => {
+    console.log('hi');
   };
 
   useEffect(() => {
-    if (state.click === false) {
-      navMenu.style.display = 'none';
-    } else if (state.click === true || (state.click && state.inital === null)) {
+    console.log(click);
+    if (click === true) {
       navMenu.style.display = 'block';
+    } else {
+      navMenu.style.display = 'none';
     }
   });
   return (
     <div ref={(el) => (navMenu = el)} className='videoScreenCover'>
-      <div className='backgroundColor'></div>
-      <div className='menu'>
-        <div className='background'></div>
-        <div className='backgroundVideo'>
-          <div className='menuContainer'>
-            <div className='wrapper'>
-              <div className='menuOptions'>
-                <nav>
-                  <ul>
-                    <li>Calendar</li>
-                    <li>To Do List</li>
-                    <li>Music</li>
-                    <li>
-                      <button onClick={handleSubmit}>Back</button>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className='wrapper'>
+        <div className='backgroundVideo'></div>
+        <nav>
+          <ul className='list'>
+            <li className='calendar'>Calendar</li>
+            <li className='todo'>To Do List</li>
+            <li className='music' onMouseEnter={handleVideo}>
+              Music
+            </li>
+            <li>
+              <button onClick={handleReturn}>Back</button>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   );

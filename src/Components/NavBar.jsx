@@ -1,42 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import VideoScreenCover from './VideoScreenCover';
 
 const NavBar = () => {
-  const [nav, setNav] = useState({
-    inital: false,
-    click: null,
-    navClick: 'Nav',
-  });
+  let button = useRef(null);
 
-  const [disable, setDisable] = useState(false);
+  const [click, setClick] = useState(false);
 
   const handleNav = () => {
-    handleDisable();
-    if (nav.inital === false) {
-      setNav({
-        inital: null,
-        click: true,
-        navClick: 'Close',
-      });
-    } else if (nav.click === true) {
-      setNav({
-        click: !nav.click,
-        navName: 'Nav',
-      });
-    } else if (nav.click === false) {
-      setNav({
-        click: !nav.click,
-        navName: 'Close',
-      });
-    }
+    setClick(true);
   };
 
-  const handleDisable = () => {
-    setDisable(!disable);
-    setTimeout(() => {
-      setDisable(false);
-    }, 800);
+  const handleReturn = () => {
+    setClick(false);
   };
+
+  useEffect(() => {
+    if (click === false || click === null) {
+      button.style.display = 'flex';
+    } else {
+      button.style.display = 'none';
+    }
+  });
+
   return (
     <div className='navbar'>
       <div className='wrapper'>
@@ -47,11 +32,11 @@ const NavBar = () => {
         </div>
       </div>
       <div className='dropdownbar'>
-        <button disabled={disable} onClick={handleNav}>
+        <button ref={(el) => (button = el)} onClick={handleNav}>
           What Do You Like to Do Today?
         </button>
       </div>
-      <VideoScreenCover state={nav} />
+      <VideoScreenCover click={click} handleReturn={handleReturn} />
     </div>
   );
 };

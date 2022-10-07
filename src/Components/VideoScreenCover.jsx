@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
+import { Link } from 'react-router-dom';
+
 const VideoScreenCover = ({ click, handleReturn }) => {
   let navMenu = useRef(null);
 
@@ -21,11 +23,21 @@ const VideoScreenCover = ({ click, handleReturn }) => {
         <div className='backgroundVideo'></div>
         <nav>
           <ul className='list'>
-            <li className='calendar'>Calendar</li>
-            <li className='todo'>To Do List</li>
-            <li className='music' onMouseEnter={handleVideo}>
-              Music
-            </li>
+            <Link
+              to='/calendarpage'
+              style={{ textDecoration: 'none', color: 'white' }}
+            >
+              <li>Calendar</li>
+            </Link>
+            <Link to='/todo' style={{ textDecoration: 'none', color: 'white' }}>
+              <li>To Do List</li>
+            </Link>
+            <Link to='/todo' style={{ textDecoration: 'none', color: 'white' }}>
+              <li>Journal</li>
+            </Link>
+            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
+              <li onMouseEnter={handleVideo}>Music</li>
+            </Link>
             <li>
               <button onClick={handleReturn}>Back</button>
             </li>

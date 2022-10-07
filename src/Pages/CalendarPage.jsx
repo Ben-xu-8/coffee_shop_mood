@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import ReactDatePicker from 'react-datepicker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const CalendarPage = (props) => {
   const events = [{}];
-  let formats = {
-    timeGutterFormat: 'HH:mm',
-  };
   const localizer = momentLocalizer(moment);
   const [newEvent, setNewEvent] = useState({ title: '', start: '', end: '' });
   const [allEvents, setAllEvents] = useState(events);
@@ -21,6 +21,14 @@ const CalendarPage = (props) => {
   return (
     <div className='calendar'>
       <div className='entry'>
+        <div className='back'>
+          <Link to='/'>
+            <FontAwesomeIcon
+              style={{ fontSize: '20px', color: 'white' }}
+              icon={faArrowLeft}
+            />
+          </Link>
+        </div>
         <div className='title'>Calendar</div>
         <div className='inputTime'>
           <input
@@ -50,7 +58,6 @@ const CalendarPage = (props) => {
         </div>
       </div>
       <Calendar
-        formats={formats}
         localizer={localizer}
         events={allEvents}
         startAccessor='startDate'

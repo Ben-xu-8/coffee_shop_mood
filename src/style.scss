@@ -198,11 +198,17 @@ body {
     }
     .task {
       display: flex;
-      justify-content: space-evenly;
+      flex-direction: column;
       color: #e7f6f2;
-      .taskName {
-      }
-      .taskButton {
+      font-size: 1.5rem;
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .taskButton {
+          padding: 20px;
+        }
       }
     }
   }

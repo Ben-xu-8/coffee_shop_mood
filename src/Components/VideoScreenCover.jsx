@@ -23,19 +23,19 @@ const VideoScreenCover = ({ click, handleReturn }) => {
         <div className='backgroundVideo'></div>
         <nav>
           <ul className='list'>
+            <Link to='/task' style={{ textDecoration: 'none', color: 'white' }}>
+              <li>Task</li>
+            </Link>
             <Link
-              to='/calendarpage'
+              to='/journal'
               style={{ textDecoration: 'none', color: 'white' }}
             >
-              <li>Calendar</li>
-            </Link>
-            <Link to='/todo' style={{ textDecoration: 'none', color: 'white' }}>
-              <li>To Do List</li>
-            </Link>
-            <Link to='/todo' style={{ textDecoration: 'none', color: 'white' }}>
               <li>Journal</li>
             </Link>
-            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
+            <Link
+              to='/music'
+              style={{ textDecoration: 'none', color: 'white' }}
+            >
               <li onMouseEnter={handleVideo}>Music</li>
             </Link>
             <li>

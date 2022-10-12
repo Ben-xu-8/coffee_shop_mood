@@ -18,15 +18,7 @@ import ReactDatePicker from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-const CalendarPage = (props) => {
-  const events = [{}];
-  const [newEvent, setNewEvent] = useState({ title: '', start: '', end: '' });
-  const [allEvents, setAllEvents] = useState(events);
-
-  const handleEvent = () => {
-    setAllEvents([...allEvents, newEvent]);
-  };
-
+const CalendarPage = () => {
   return (
     <div className='calendar'>
       <div className='entry'>

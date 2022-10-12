@@ -15,7 +15,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/journal' element={<Journal />} />
           <Route path='/calendarpage' element={<CalendarPage />} />
-          <Route path='/todo' element={<ToDo />} />
+          <Route path='/task' element={<ToDo />} />
           <Route path='/music' element={<Music />} />
         </Routes>
       </div>

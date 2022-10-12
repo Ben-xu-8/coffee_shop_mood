@@ -125,66 +125,85 @@ body {
   }
 }
 
-.calendar {
-  .entry {
-    background-color: #395b64;
-    padding: 10px;
-    .title {
-      text-align: center;
-      font-size: 2rem;
-      color: #e7f6f2;
-    }
-  }
-  .calendarEvent {
-    background-color: #e7f6f2;
-  }
-}
-
-.todo {
-  height: 100vh;
+.objective {
   background-color: #395b64;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .wrapper {
-    .title {
-      color: #e7f6f2;
-      padding: 20px;
-      font-size: 30px;
-    }
-    form {
-      input {
-        font-size: 1.5rem;
-        width: 500px;
-        padding: 10px;
-        border: none;
-        margin: 5px;
+  overflow-x: hidden;
+  .todoCalendar {
+    display: flex;
+    .calendar {
+      width: 50%;
+      .entry {
         background-color: #395b64;
-        border-bottom: 1px solid white;
-        outline: none;
-        color: #e7f6f2;
-      }
-      button {
         padding: 10px;
-        margin: 20px;
-        border-radius: 15px;
-        border: none;
+        .back {
+          padding: 5px;
+        }
+        .title {
+          text-align: center;
+          font-size: 2rem;
+          color: #e7f6f2;
+        }
+      }
+      .calendarEvent {
+        background-color: #e7f6f2;
       }
     }
-    .task {
-      display: flex;
-      flex-direction: column;
-      color: #e7f6f2;
-      font-size: 1.5rem;
-      div {
+  }
+  .todo {
+    height: 100vh;
+    width: 50%;
+    background-color: #395b64;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .wrapper::-webkit-scrollbar-track {
+      background-color: #395b64;
+    }
+    .wrapper::-webkit-scrollbar-thumb {
+      background-color: #395b64;
+    }
+    .wrapper {
+      overflow-y: scroll;
+      .title {
+        color: #e7f6f2;
+        padding: 20px;
+        font-size: 30px;
+      }
+      form {
+        input {
+          font-size: 1.5rem;
+          width: 500px;
+          padding: 10px;
+          border: none;
+          margin: 5px;
+          background-color: #395b64;
+          border-bottom: 1px solid white;
+          outline: none;
+          color: #e7f6f2;
+        }
+        button {
+          padding: 10px;
+          margin: 20px;
+          border-radius: 15px;
+          border: none;
+        }
+      }
+      .task {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        .taskButton {
-          padding: 20px;
+        flex-direction: column;
+        color: #e7f6f2;
+        font-size: 1.5rem;
+        div {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          .taskButton {
+            padding: 20px;
+          }
         }
       }
     }

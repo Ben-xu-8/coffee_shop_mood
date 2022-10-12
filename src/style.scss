@@ -209,3 +209,52 @@ body {
     }
   }
 }
+
+.music {
+  background-color: #395b64;
+  height: 100%;
+  .header {
+    .title {
+      padding: 20px;
+      text-align: center;
+    }
+  }
+  .middle {
+    width: 100%;
+    display: flex;
+    background-color: #395b64;
+    .navbar {
+      background-color: #2c3333;
+      width: 150px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 400px;
+        margin-bottom: 600px;
+      }
+      .navbarItems {
+        position: absolute;
+        padding: 0px;
+        margin: 0px;
+        .navbarItem {
+          color: #e7f6f2;
+          padding: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+    .musicList {
+      height: 100vh;
+      background-color: #395b64;
+    }
+  }
+  .bottom {
+    width: 100%;
+    background-color: white;
+
+    .musicPlayer {
+    }
+  }
+}

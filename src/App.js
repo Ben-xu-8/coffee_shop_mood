@@ -6,6 +6,7 @@ import Journal from './Pages/Journal';
 import ToDo from './Pages/ToDo';
 import Music from './Pages/Music';
 import './style.scss';
+import Playlist from './Components/Playlist';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/calendarpage' element={<CalendarPage />} />
           <Route path='/task' element={<ToDo />} />
           <Route path='/music' element={<Music />} />
+          <Route path='/playlist' element={<Playlist />} />
         </Routes>
       </div>
     </BrowserRouter>
